@@ -24,7 +24,7 @@ public class DemoTest {
      }
 
      @Test
-     public void test() {
+     public void main_validTriangle_isTriangle() {
          String[] args = {};
          setIO("3\n4\n5\n");
          Demo.main(args);
@@ -36,4 +36,18 @@ public class DemoTest {
 
          assertEquals(expectedOutput, output.toString());
      }
+
+    @Test
+    public void main_invalidTriangle_isNotTriangle() {
+        String[] args = {};
+        setIO("1\n2\n5\n");
+        Demo.main(args);
+
+        String expectedOutput = "Enter side 1: \n" +
+                "Enter side 2: \n" +
+                "Enter side 3: \n" +
+                "This is not a triangle.\n";
+
+        assertEquals(expectedOutput, output.toString());
+    }
 }
