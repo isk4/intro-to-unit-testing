@@ -6,7 +6,6 @@
  */
 
 import static org.junit.Assert.*;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
@@ -49,5 +48,55 @@ public class DemoTest {
                 "This is not a triangle.\n";
 
         assertEquals(expectedOutput, output.toString());
+    }
+
+    @Test
+    public void isTriangle_equilateral_returnTrue() {
+         assertTrue(Demo.isTriangle(1, 1, 1));
+    }
+
+    @Test
+    public void isTriangle_isosceles_returnTrue() {
+        assertTrue(Demo.isTriangle(5, 5, 3));
+    }
+
+    @Test
+    public void isTriangle_scalene_returnTrue() {
+        assertTrue(Demo.isTriangle(5, 6, 7));
+    }
+
+    @Test
+    public void isTriangle_scalenePermutation1_returnTrue() {
+        assertTrue(Demo.isTriangle(9, 12, 15));
+    }
+
+    @Test
+    public void isTriangle_scalenePermutation2_returnTrue() {
+        assertTrue(Demo.isTriangle(15, 9, 12));
+    }
+
+    @Test
+    public void isTriangle_scalenePermutation3_returnTrue() {
+        assertTrue(Demo.isTriangle(12, 15, 9));
+    }
+
+    @Test
+    public void isTriangle_sumEqualToThird_returnFalse() {
+        assertFalse(Demo.isTriangle(5, 5, 10));
+    }
+
+    @Test
+    public void isTriangle_sumLessThanThird_returnFalse() {
+        assertFalse(Demo.isTriangle(5, 4, 10));
+    }
+    
+    @Test
+    public void isTriangle_sideEqualToZero_returnFalse() {
+         assertFalse(Demo.isTriangle(0, 2, 1));
+    }
+
+    @Test
+    public void isTriangle_hasNegativeSide_returnFalse() {
+        assertFalse(Demo.isTriangle(-1, 1, 1));
     }
 }
