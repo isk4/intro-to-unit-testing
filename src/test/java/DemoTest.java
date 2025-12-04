@@ -81,8 +81,18 @@ public class DemoTest {
     }
 
     @Test
-    public void isTriangle_sumEqualToThird_returnFalse() {
+    public void isTriangle_sumEqualToThirdPermutation1_returnFalse() {
         assertFalse(Demo.isTriangle(5, 5, 10));
+    }
+
+    @Test
+    public void isTriangle_sumEqualToThirdPermutation2_returnFalse() {
+        assertFalse(Demo.isTriangle(5, 10, 5));
+    }
+
+    @Test
+    public void isTriangle_sumEqualToThirdPermutation3_returnFalse() {
+        assertFalse(Demo.isTriangle(10, 5, 5));
     }
 
     @Test
